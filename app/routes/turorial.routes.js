@@ -1,5 +1,6 @@
 module.exports = app => {
   const tutorials = require("../controllers/tutorial.controller.js");
+  const books = require("../controllers/book.controller.js");
 
   var router = require("express").Router();
 
@@ -8,6 +9,8 @@ module.exports = app => {
 
   // Retrieve all Tutorials
   router.get("/", tutorials.findAll);
+   // Retrieve all books
+   router.get("/book", books.getAllBooks);
 
   // Retrieve all published Tutorials
   router.get("/published", tutorials.findAllPublished);
